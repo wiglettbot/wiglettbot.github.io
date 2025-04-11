@@ -112,6 +112,11 @@
           tell you everything you need to know. (And if you do need more help, you can always come back here!)
         </div><br>
         <div class="bubble">
+          The goal of this guide is to set up the bot so that it can automatically update your doc while running the draft,
+          and with match data (Standings, Kill Leader, etc.) when submitting games after the draft. If you only want one
+          of these features, you can skip to the corresponding sections using the Contents section above.
+        </div><br>
+        <div class="bubble">
           To start, you need to link a doc to Wiglett. You have two options for this: first, we will cover the
           <b>doc template</b>, and then we will go over how to <b>link a custom doc</b>. Even if you have an existing
           doc, I would highly recommend reading the next section on the doc template, as it may save you some effort.
@@ -248,7 +253,7 @@
           Note that for /submit to work properly, the mons on WiglettMatches should use the Showdown name scheme (e.g. Venusaur-Mega). If you need to convert the Smogon template name scheme
           (e.g. Mega Venusaur) to this, you can use the following formula:<br><b>
           =MAP(REFERENCE TO YOUR MONS; LAMBDA(a; IFS(REGEXMATCH(a; "^Mega .* .$"); INDEX(SPLIT(a; " "); 0; 2)&"-Mega-"&RIGHT(a; 1); REGEXMATCH(a; "Paldean Tauros"); "Tauros-Paldea-"&SUBSTITUTE(a; "Paldean Tauros "; ""); REGEXMATCH(a; "^[^I].*(n|a) "); LET(b; REGEXEXTRACT(a; "^.* "); SUBSTITUTE(a; b; "")&"-"&SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(b; "Hisuian"; "Hisui"); "ian"; ""); "an"; "a")); TRUE; a)))
-        </b></div>
+        </b></div><br>
         <h2 id="rules">
           Setting Rules
         </h2>
@@ -332,6 +337,10 @@
         <div class="bubble">
           Using <b>/rule</b>, <b>/draftmod</b>, and <b>/submit</b> will also give a dropdown if you have multiple divisions. If a coach is in multiple drafts at once, <b>/draft</b> and <b>/leavepick</b> will
           allow them to select a division.
+        </div><br>
+        <div class="bubble">
+          If you need to have multiple divisions on the same doc, you should create a simple doc for each division to link to Wiglett, and reference the data on your actual doc using an IMPORTRANGE formula.
+          An easy way to do this is to copy the Wiglett Doc Template, fill in the coaches, and copy over your point values.
         </div><br>
         <h2 id="draft">
           The Draft
