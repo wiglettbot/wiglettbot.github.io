@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <link rel="icon" href="/wiglett.ico" />
+
+    <title>Wiglett</title>
+
+    <link rel="stylesheet" href="/style.css" />
+    <noscript>
+      <style>
+        .home {
+          display: flex !important;
+        }
+      </style>
+    </noscript>
+
+    <script src="/script.js" defer></script>
+  </head>
+  <body>
+    <div class="wrapper">
+      <div class="content home" role="main" hidden>
+        <div class="header">
+          <h1>
+            Wiglett
+          </h1>
+        </div>
+        <h2 class="invite">
+          <a href="https://discord.com/oauth2/authorize?client_id=1024852268450848818">Invite Link</a>
+        </h2>
+        <h2>
+          What is Wiglett?
+        </h2>
+        <div class="bubble">
+          Wiglett is a Discord bot designed for Pokémon draft leagues. It handles your
+          drafts, match submissions, and more!
+        </div>
+        <br>
+        <h2>
+          Why should I use Wiglett?
+        </h2>
+        <div class="bubble">
+          Wiglett removes the vast majority of moderation work, making it much easier to run a
+          draft league. With features like <b>/leavepick</b> and <b>/draftmod timer</b>, Wiglett makes drafts go much
+          faster while updating the doc for you! And with <b>/submit</b>, you can submit matches with little to no effort.
+        </div>
+        <br>
+        <h2>
+          How do I set it up?
+        </h2>
+        <div class="bubble">
+          It's simple! Invite the bot using the link above, and use <b>/guide</b> to get started.
+          Alternatively, you can find a detailed setup guide using the link below.
+          <noscript>However, it looks like you have JavaScript disabled, so you may not be able to access the guide :(</noscript>
+        </div>
+        <br>
+        <h3 class="invite">
+          <a href="javascript:loadPage('guide')">Setup Guide</a>
+        </h3>
+        <h2>
+          What else does it do?
+        </h2>
+        <div class="bubble">
+          As part of its match submission capabilities, Wiglett has <b>/analyze</b> just like Porygon
+          (except this one has better kill tracking, works with old gens, randbats, etc. and doesn't crash). There is also a cross-server
+          economy system with Game Corner themed minigames (like Voltorb Flip)! More features, like being able to
+          trade and battle within the bot, are in progress.
+        </div>
+        <br>
+        <h2>
+          Can I see it in action?
+        </h2>
+        <div class="carousel">
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+          <div class="item">
+          </div>
+        </div>
+        <p>
+          (More images can be found in the guide.)
+        </p>
+      </div>
+      <div class="content" role="main" hidden>
+        <a href="javascript:loadPage('')">Back</a>
+        <h1>
+          Wiglett Setup Guide
+        </h1>
+        <h2>
+          Contents
+        </h2>
+        <ol>
+          <li><a href="/?guide#intro">Introduction</a></li>
+          <li><a href="/?guide#doc-template">Linking the Doc Template</a></li>
+          <li><a href="/?guide#custom-doc">Linking a Custom Doc</a></li>
+          <li><a href="/?guide#rules">Setting Rules</a></li>
+          <li><a href="/?guide#divs">Creating Divisions</a></li>
+          <li><a href="/?guide#draft">The Draft</a></li>
+          <li><a href="/?guide#submit">Submitting Matches</a></li>
+        </ol>
+        <h2 id="intro">
+          Introduction
+        </h2>
+        <div class="bubble">
+          Hello, and welcome to the Wiglett Setup Guide! This is a detailed resource on all of the options that
+          Wiglett provides. If you just want brief instructions on how to get started, the <b>/guide</b> command should
+          tell you everything you need to know. (And if you do need more help, you can always come back here!)
+        </div><br>
+        <div class="bubble">
+          To start, you need to link a doc to Wiglett. You have two options for this: first, we will cover the
+          <b>doc template</b>, and then we will go over how to <b>link a custom doc</b>. Even if you have an existing
+          doc, I would highly recommend reading the next section on the doc template, as it may save you some effort.
+        </div><br>
+        <h2 id="doc-template">
+          Linking the Doc Template
+        </h2>
+        <div class="bubble">
+          To get a link to the doc template, use <b>/doc template</b>. You can see the command being used below.
+          Clicking the link will let you make a copy.
+        </div><br>
+        <div class="carousel">
+          <div class="item" style="background-image: url('/img/slashmenudoc.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/doctemplate.jpg')">
+          </div>
+        </div><br>
+        <div class="bubble">
+          When the copy has been made, you will be greeted with a setup tab as seen below. All you have to do is click the Set Up Doc
+          button. A window should appear where you need to accept some permissions - these are required for the script to edit the doc - 
+          and create a form that will be linked to the doc (this is how Wiglett will send data). You can use the scrollbar on the image
+          carousel below to see what accepting the permissions looks like. FYI the reason why it's complaining that the script isn't
+          verified, has no privacy policy, etc. is because it's entirely attached to the copy, so <i>you</i> are the "developer" and have
+          100% control over editing the script should you wish to.
+        </div><br>
+        <div class="carousel">
+          <div class="item" style="background-image: url('/img/setuptab.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/auth1.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/auth2.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/auth3.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/auth4.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/authdone.jpg')">
+          </div>
+        </div><br>
+        <div class="bubble">
+          Then, wait for the script to complete. After that, you're done!... with the setup for Wiglett at least. The only required steps are
+          putting team names on the Rosters tab (they will fill in everywhere else), and putting the point values on the WiglettDex tab.
+        </div><br>
+        <div class="bubble">
+          Other recommended tasks at this point are adding the rules to the Rules tab, adding coach names, time zones and logos to Rosters, setting the number
+          of weeks for the Schedule tab (you can randomize it after the draft), and changing the color of the doc. As you can see, the doc does most
+          of the work for you.
+        </div><br>
+        <div class="carousel">
+          <div class="item" style="background-image: url('/img/rosters1.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/rosters2.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/wiglettdex.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/schedule.jpg')">
+          </div>
+        </div><br>
+        <div class="bubble">
+          To link the doc to Wiglett, first make sure your doc is public. Next, use <b>/doc link</b>, and paste in the url as shown. Your doc will then be linked!
+        </div><br>
+        <div class="carousel">
+          <div class="item" style="background-image: url('/img/doclink.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/doclinkres.jpg')">
+          </div>
+        </div><br>
+        <h2 id="custom-doc">
+          Linking a Custom Doc
+        </h2>
+        <div class="bubble">
+          If you completed the previous section with the doc template, you can skip to <a href="/?guide#rules">the next section</a>. But if you already
+          have a doc which you would like to maintain, this is the section for you! I would like to emphasize that if you have no knowledge about Google Sheets
+          formulas and you were just given a doc template by someone else, I would recommend switching to the Wiglett doc template. This section does
+          <b>not</b> require complicated Google Sheets knowledge, but it is easier if you generally know what you are doing. For images, I will use the Smogon
+          doc template as an example.
+        </div><br>
+        <div class="bubble">
+          To start, make sure your doc is public. Then use the <b>/doc link</b> command, and paste in your doc url as shown.
+          You will be asked whether you want to use the Wiglett Setup Wizard; select Yes, and click the link.
+        </div><br>
+        <div class="carousel">
+          <div class="item" style="background-image: url('/img/doclink.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/wizprompt.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/wizlink.jpg')">
+          </div>
+        </div><br>
+        <div class="bubble">
+          Once you've pulled up the wizard, press ctrl-R (or click the Run button). If it's your first time using the wizard, you will have to accept some permissions
+          as shown below. The script will then link a form to your doc which will allow Wiglett to communicate with it, and also add some tabs which parse the data
+          sent by Wiglett. After the wizard has finished, repeat the previous step of pasting your doc url into the <b>/doc link</b> command (if you need the image for this again just scroll up).
+        </div><br>
+        <div class="carousel">
+          <div class="item" style="background-image: url('/img/wizauth1.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/auth2.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/auth3.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/wizauth2.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/wizcomplete.jpg')">
+          </div>
+        </div><br>
+        <div class="bubble">
+          Now your doc is linked, but you will need to integrate the tabs that got added to your doc before starting the draft. First, go to the Wiglett tab and enter the points budget, number of players,
+          and length of the draft. Next, go to WiglettDex and input the point values for the mons. If you have these stored elsewhere on the doc, you can use a formula to do this. Finally, reference your
+          coach/team names and mons on the WiglettMatches tab (you can do this after the draft since it's only needed for /submit).
+        </div><br>
+        <div class="carousel">
+          <div class="item" style="background-image: url('/img/drafttab.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/wiglettdex.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/matchtab.jpg')">
+          </div>
+        </div><br>
+        <div class="bubble">
+          After that, you will want to reference the data on your existing tabs. The Wiglett Setup Wizard has some sample formulas that you can use, so copy those if you want - otherwise
+          I will explain things here. The draft will fill in on the Wiglett tab in B2:B, with the coach indexes already in column C. The WiglettMatches tab has Standings and Kill Leader data
+          which you can reference directly on their respective tabs. Both of these will need to be sorted with the SORT formula. Below you can see some examples of how to integrate these tabs.
+        </div><br>
+        <div class="carousel">
+          <div class="item" style="background-image: url('/img/rostersint.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/standingsint.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/killsint.jpg')">
+          </div>
+        </div><br>
+        <div class="bubble">
+          Note that for /submit to work properly, the mons on WiglettMatches should use the Showdown name scheme (e.g. Venusaur-Mega). If you need to convert the Smogon template name scheme
+          (e.g. Mega Venusaur) to this, you can use the following formula:<br><b>
+          =MAP(REFERENCE TO YOUR MONS; LAMBDA(a; IFS(REGEXMATCH(a; "^Mega .* .$"); INDEX(SPLIT(a; " "); 0; 2)&"-Mega-"&RIGHT(a; 1); REGEXMATCH(a; "Paldean Tauros"); "Tauros-Paldea-"&SUBSTITUTE(a; "Paldean Tauros "; ""); REGEXMATCH(a; "^[^I].*(n|a) "); LET(b; REGEXEXTRACT(a; "^.* "); SUBSTITUTE(a; b; "")&"-"&SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(b; "Hisuian"; "Hisui"); "ian"; ""); "an"; "a")); TRUE; a)))
+        </b></div>
+        <h2 id="rules">
+          Setting Rules
+        </h2>
+        <div class="bubble">
+          Now that you've linked your doc, you're ready to start the draft! However, there are some things you can do before that, which I will cover in this section and the next. Here, we will
+          discuss how you can use <b>/rule</b> to add more complex rules to your draft.
+        </div><br>
+        <div class="bubble">
+          When you use <b>/rule</b>, there will be a dropdown menu with different options. You can view the current rules by selecting View Rules as shown below. By default, your draft has
+          species clause on, and count passives + cut timer on skip off. You can toggle either of these by using the command with the corresponding option. Count passives
+          determines whether passive kills are separated from direct kills when submitting matches, and cut timer on skip will halve a coach's timer if they are skipped by timer during the draft.
+        </div><br>
+        <div class="carousel">
+          <div class="item" style="background-image: url('/img/rulesdropdown.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/viewrules.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/ruleshelp.jpg')">
+          </div>
+        </div><br>
+        <div class="bubble">
+          The other options use the data parameter of the command. For example, to delete the 4th rule (you can see the numbers in view rules), select delete rule and enter 4 into the data parameter. The min length
+          rule allows for variable draft lengths - normally Wiglett will not allow coaches to run out of points early, so this rule lets you tell Wiglett the minimum number of mons that coaches
+          need to draft. The megas rule restricts the number of mega evolutions coaches can draft to the number specified (specifically, it checks whether the mon's name includes "-Mega" or "Mega ").
+        </div><br>
+        <div class="bubble">
+          The cap rule is the most versatile one. The data you enter must be formatted as: points min max, where points is a comma separated list of point values, min is the minimum number of mons
+          that coaches must draft from these tiers, and max is the maximum that coaches can draft. For example, if I enter 18,19 1 2, coaches <i>must</i> draft at least 1 mon that costs 18 or 19, and
+          <i>cannot</i> draft more than 2 mons from these tiers.
+        </div><br>
+        <div class="carousel">
+          <div class="item" style="background-image: url('/img/caprule.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/rules.jpg')">
+          </div>
+        </div><br>
+        <div class="bubble">
+          If you have a tier-based league, this is the main way for you to enforce limits, as any non-numeric point values in WiglettDex will not subtract any points from coaches' totals. For example,
+          if I assign mons to S, A, B, C, and D tiers, and I want coaches to draft 2 mons from each tier, then I would do one rule with S 2 2, one with A 2 2, so on and so forth. If you have a hybrid
+          points and tiers league, you can give mons their numeric values in WiglettDex, and use cap rules to enforce the additional restrictions (e.g. one of each tier required).
+        </div><br>
+        <h2 id="divs">
+          Creating Divisions
+        </h2>
+        <div class="bubble">
+          If you only need one division, you can skip to <a href="/?guide#draft">starting the draft</a>. Otherwise, you can use the <b>/div</b> command as described in this section.
+        </div><br>
+        <div class="bubble">
+          To add a division, use <b>/div create</b>. Then enter a name for the division in the name parameter. After using the command, you
+          can see that a div has been added.
+        </div><br>
+        <div class="carousel">
+          <div class="item" style="background-image: url('/img/divcreate.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/divcreateres.jpg')">
+          </div>
+        </div><br>
+        <div class="bubble">
+          When you have more than one division, most commands will now ask you which division you want to use the command for. For example, using <b>/div rename</b> or <b>/div delete</b> will give you a
+          dropdown of all of the divisions. The command will rename or delete the division that you select.
+        </div><br>
+        <div class="carousel">
+          <div class="item" style="background-image: url('/img/divdropdown.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/divrename.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/divdelete.jpg')">
+          </div>
+        </div><br>
+        <div class="bubble">
+          To set up this div, simply use <b>/doc link</b> to link another doc. Assuming you have already set up a doc in the previous steps, you can make a copy of that doc. However, before linking the doc,
+          you will need to rerun the setup script to link a new form. If you used the doc template, a new menu item will appear as shown below (it's pretty hard to miss). If you have a custom doc, attempting
+          to link a copy of your doc will send you to the Wiglett Setup Wizard as it did the first time. Running it will simply ensure that a form is properly linked, after which you can link the doc.
+        </div><br>
+        <div class="carousel">
+          <div class="item" style="background-image: url('/img/docdropdown.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/fixformdesync.jpg')">
+          </div>
+        </div><br>
+        <div class="bubble">
+          Using <b>/rule</b>, <b>/draftmod</b>, and <b>/submit</b> will also give a dropdown if you have multiple divisions. If a coach is in multiple drafts at once, <b>/draft</b> and <b>/leavepick</b> will
+          allow them to select a division.
+        </div><br>
+        <h2 id="draft">
+          The Draft
+        </h2>
+        <div class="bubble">
+          You've made it to the fun part! This section will explain how to use <b>/draftmod</b> to moderate the draft. <b>/draft</b> and <b>/leavepick</b> will also be discussed here, as these will be used
+          by coaches during the draft. These commands are very self explanatory, but you can explain how to use them in an announcement, or give them the link to <a href="https://youtu.be/r5wZwTkfels">this video</a>.
+        </div><br>
+        <div class="bubble">
+          To start the draft, use <b>/draftmod start</b>. You can then select a number of users <i>in draft order</i> corresponding to how many coaches are in the division. If the number you see is not
+          correct, make sure that you set up your doc correctly. After selecting all of the users, click Start. Wiglett will ping the first coach, and the draft will begin!
+        </div><br>
+        <div class="carousel">
+          <div class="item" style="background-image: url('/img/draftstart.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/draftstartres.jpg')">
+          </div>
+        </div><br>
+        <div class="bubble">
+          To draft a mon, coaches can use <b>/draft</b>. This will draft the mon, updating the doc and pinging the next person. If the pick is illegal for whatever reason, Wiglett will let them know why they cannot pick that mon.
+          If they misspell the mon, there is a built-in autocorrect (because draft players cannot spell). However, if they <i>really</i> butcher the name, it will inform them that the pick is invalid.
+        </div><br>
+        <div class="carousel">
+          <div class="item" style="background-image: url('/img/draft.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/banned.jpg')">
+          </div>
+        </div><br>
+        <div class="bubble">
+          The real magic lies in <b>/leavepick</b>. When it isn't their turn, coaches can leave picks which will automatically be drafted when it is their turn. Coaches can leave up to 2 picks, and a backup for each,
+          by selecting the different options provided when using the command as seen below. If a pick gets sniped, the backup (if present and available) will be drafted instead; otherwise, the draft will wait for them
+          as usual. They can also use <b>/leavepicktogglestrict</b>; this will make it so if they have left a next and following pick, the next pick will <i>not</i> be drafted if the following pick is sniped. This is
+          useful if you want to draft a pair of mons, but not just one of them. 
+        </div><br>
+        <div class="carousel">
+          <div class="item" style="background-image: url('/img/leavepick.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/leavepickres.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/leavepicktrigger.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/togglestrict.jpg')">
+          </div>
+        </div><br>
+        <div class="bubble">
+          Now for your job. There are a number of <b>/draftmod</b> commands that allow you to moderate the draft. <b>/draftmod pause</b> pauses the draft, preventing coaches from drafting. To unpause the draft, use <b>/draftmod start</b>.
+          <b>/draftmod end</b> can be used to end the draft early. <b>/draftmod replace</b> allows you to replace a coach that is in the draft - select the coaches to swap as shown in the final image below, and then click Replace.
+        </div><br>
+        <div class="carousel">
+          <div class="item" style="background-image: url('/img/draftpause.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/draftend.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/draftreplace.jpg')">
+          </div>
+        </div><br>
+        <div class="bubble">
+          <b>/draftmod skip</b> skips the current coach, effectively drafting the --- placeholder for them. At any point afterwards, when that coach uses /draft, they can draft a make up pick. If they do not do so beforehand, 
+          coaches will have to draft all make ups before their next pick. <b>/draftmod forcedraft</b>, rather than skipping, forces the current coach to draft a specified mon. This will bypass any point or rule restrictions in case
+          you need to intentionally break the rules... so make sure it is intentional! However, this command will still only let you draft mons that are on the doc, so you don't have to worry about misspelling.
+        </div><br>
+        <div class="carousel">
+          <div class="item" style="background-image: url('/img/draftskip.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/forcedraft.jpg')">
+          </div>
+        </div><br>
+        <div class="bubble">
+          <b>/draftmod timer</b> allows you to set a timer for the draft. Enter the number of minutes, and coaches will automatically be skipped if they do not pick before the time runs
+          out. If <b>/rule</b> cut timer on skip is toggled on, a coach's future timer will be halved when they are skipped via timer. Turning off the rule mid draft will disable this. Note that
+          pausing and unpausing the draft or changing the timer will not check timer cuts for the current pick.
+        </div><br>
+        <div class="carousel">
+          <div class="item" style="background-image: url('/img/drafttimer.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/drafttimerskip.jpg')">
+          </div>
+        </div><br>
+        <div class="bubble">
+          If at any point you need to manually edit a draft pick, you can do so by editing the data in the (hidden) WiglettData tab on the doc. Simply ctrl-F for the mon, and replace it.
+        </div><br>
+        <h2 id="submit">
+          Submitting Matches
+        </h2>
+        <div class="bubble">
+          For the final section, I will cover how to submit matches to the doc using <b>/submit</b>. If all you need is match stats from a replay, you can use <b>/analyze</b> to get these directly instead of submitting to the doc.
+        </div><br>
+        <div class="bubble">
+          To submit a replay, use <b>/submit replay</b>, and paste the replay link into the command. You will see a preview
+          of the match stats - if everything looks correct, click Submit. Then you should see the doc update with the match data.
+        </div><br>
+        <div class="carousel">
+          <div class="item" style="background-image: url('/img/submitreplay.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/submitreplayres.jpg')">
+          </div>
+        </div><br>
+        <div class="bubble">
+          The other option is <b>/submit manual</b>. This is primarily intended for wifi leagues, which do not have replays. However, you can still
+          add a replay to the replay parameter if you simply need to adjust stats before submitting them. (This will automatically be done if you do a replay submit, and Wiglett detects that there is a Zoroark
+          or Zorua in the replay. This is because kills may not be correctly given if said mon gets a kill with Illusion active, and then switches out before the illusion is broken, as there is no other way to
+          tell reliably via replay logs whether a mon is Zoroark if the illusion was never broken.) You can also use this command to input forfeit wins.
+        </div><br>
+        <div class="carousel">
+          <div class="item" style="background-image: url('/img/submitmanual.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/submitmanual2.jpg')">
+          </div>
+        </div><br>
+        <div class="bubble">
+          After using the command, you will see a menu as shown in the images above. Select the winning and losing coach, and a differential option. Auto Diff is the best option for single games - differential
+          will be calculated based on the deaths reported in the following stats. The 2-0 and 2-1 options are for best-of-3 sets, and 3-0 is for forfeit wins. If you need a different differential for a forfeit win,
+          you can select this option and edit the differential later in WiglettData. After selecting a diff option, you will be able to select the mons that appeared in the match (for FFWs don't select
+          anything and the match will be submitted immediately). 
+        </div><br>
+        <div class="bubble">
+          Now it's time to enter your match data. Each mon will have buttons to increase or decrease kills and deaths (and passive kills if count passives is turned on). When the stats are correct, click Next to proceed
+          to the next mon. On the final mon, clicking Next will submit the match.
+        </div><br>
+        <div class="carousel">
+          <div class="item" style="background-image: url('/img/submitmanual3.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/submitmanual4.jpg')">
+          </div>
+          <div class="item" style="background-image: url('/img/submitmanual5.jpg')">
+          </div>
+        </div><br>
+        <div class="bubble">
+          If you need to change match data for any reason, edit the WiglettData tab on the doc. For example, if you made a mistake when submitting and need to resubmit, you can delete the row of the previously submitted
+          match. Duplicate replay submissions won't be counted towards stats <i>unless</i> the analysis is different for whatever reason (i.e. count passives changed), but to be safe, try not to leave duplicate submissions.
+        </div><br>
+        <div class="bubble">
+          This concludes the guide! I appreciate everyone who has read this far, and I hope that this guide has been useful to you. If you have any suggestions for things to add or expand upon, feel free to contact me (camelConvention)
+          via Discord.
+        </div><br>
+      </div>
+      <div class="content" role="main" hidden>
+        <p>Privacy Policy for Wiglett (Discord requires that we provide this, so this is basically a template)</p>
+        <div class="container"> 
+          <h1>Privacy Policy</h1>
+            <p>Last updated: January 18, 2025</p>
+            <p>This Privacy Policy describes Our policies and procedures on the collection, use and disclosure of Your information when You use the Service and tells You about Your privacy rights and how the law protects You.</p>
+            <p>We use Your Personal data to provide and improve the Service. By using the Service, You agree to the collection and use of information in accordance with this Privacy Policy.</p>
+          <h2>Interpretation and Definitions</h2>
+            <h3>Interpretation</h3>
+              <p>The words of which the initial letter is capitalized have meanings defined under the following conditions. The following definitions shall have the same meaning regardless of whether they appear in singular or in plural.</p>
+            <h3>Definitions</h3>
+              <p>For the purposes of this Privacy Policy:</p>
+              <ul>
+                <li>
+                <p><strong>Account</strong> means a unique account created for You to access our Service or parts of our Service.</p>
+                </li>
+                <li>
+                <p><strong>Affiliate</strong> means an entity that controls, is controlled by or is under common control with a party, where "control" means ownership of 50% or more of the shares, equity interest or other securities entitled to vote for election of directors or other managing authority.</p>
+                </li>
+                <li>
+                <p><strong>Application</strong> refers to Wiglett, the software program provided by the Company.</p>
+                </li>
+                <li>
+                <p><strong>Company</strong> (referred to as either "the Company", "We", "Us" or "Our" in this Agreement) refers to Wiglett's owner(s).</p>
+                </li>
+                <li>
+                <p><strong>Device</strong> means any device that can access the Service such as a computer, a cellphone or a digital tablet.</p>
+                </li>
+                <li>
+                <p><strong>Personal Data</strong> is any information that relates to an identified or identifiable individual.</p>
+                </li>
+                <li>
+                <p><strong>Service</strong> refers to the Application.</p>
+                </li>
+                <li>
+                <p><strong>Service Provider</strong> means any natural or legal person who processes the data on behalf of the Company. It refers to third-party companies or individuals employed by the Company to facilitate the Service, to provide the Service on behalf of the Company, to perform services related to the Service or to assist the Company in analyzing how the Service is used.</p>
+                </li>
+                <li>
+                <p><strong>Third-party Social Media Service</strong> refers to any website or any social network website through which a User can log in or create an account to use the Service.</p>
+                </li>
+                <li>
+                <p><strong>Usage Data</strong> refers to data collected automatically, either generated by the use of the Service or from the Service infrastructure itself (for example, the duration of a page visit).</p>
+                </li>
+                <li>
+                <p><strong>You</strong> means the individual accessing or using the Service, or the company, or other legal entity on behalf of which such individual is accessing or using the Service, as applicable.</p>
+                </li>
+              </ul>
+          <h2>Collecting and Using Your Personal Data</h2>
+            <h3>Types of Data Collected</h3>
+              <h4>Personal Data</h4>
+                <p>While using Our Service, We may ask You to provide Us with certain personally identifiable information that can be used to contact or identify You. Personally identifiable information may include, but is not limited to:</p>
+                <ul>
+                  <li>Usage Data</li>
+                </ul>
+              <h4>Usage Data</h4>
+                <p>Usage Data is collected automatically when using the Service.</p>
+                <p>Usage Data may include any information required for the operation of the Service, alongside any diagnostic data.</p>
+              <h4>Information from Third-Party Social Media Services</h4>
+                <p>The Company allows You to interact with the Application through the following Third-party Social Media Services:</p>
+                <ul>
+                  <li>Discord</li>
+                  <li>Google</li>
+                </ul>
+                <p>If You decide to grant us access to a Third-Party Social Media Service, We may collect Personal data that is already associated with Your Third-Party Social Media Service's account, such as Your username, Your email address, or Your activities associated with that account.</p>
+                <p>You may also have the option of sharing additional information with the Company through Your Third-Party Social Media Service's account. If You choose to provide such information and Personal Data, during registration or otherwise, You are giving the Company permission to use, share, and store it in a manner consistent with this Privacy Policy.</p>
+            <h3>Use of Your Personal Data</h3>
+              <p>The Company may use Personal Data for the following purposes:</p>
+              <ul>
+                <li>
+                <p><strong>To provide and maintain our Service</strong>, including to monitor the usage of our Service.</p>
+                </li>
+                <li>
+                <p><strong>To manage Your Account:</strong> to manage Your registration as a user of the Service. The Personal Data You provide can give You access to different functionalities of the Service that are available to You as a registered user.</p>
+                </li>
+                <li>
+                <p><strong>For the performance of a contract:</strong> the development, compliance and undertaking of the purchase contract for the products, items or services You have purchased or of any other contract with Us through the Service.</p>
+                </li>
+                <li>
+                <p><strong>To contact You:</strong> To contact You by email, telephone calls, SMS, or other equivalent forms of electronic communication, such as a mobile application's push notifications regarding updates or informative communications related to the functionalities, products or contracted services, including the security updates, when necessary or reasonable for their implementation.</p>
+                </li>
+                <li>
+                <p><strong>To manage Your requests:</strong> To attend and manage Your requests to Us.</p>
+                </li>
+                <li>
+                <p><strong>For other purposes</strong>: We may use Your information for other purposes, such as data analysis, identifying usage trends, determining the effectiveness of our promotional campaigns and to evaluate and improve our Service, products, services, marketing and your experience.</p>
+                </li>
+              </ul>
+              <p>We may share Your personal information in the following situations:</p>
+              <ul>
+                <li><strong>With Service Providers:</strong> We may share Your personal information with Service Providers to monitor and analyze the use of our Service.</li>
+                <li><strong>With other users:</strong> when You share personal information or otherwise interact in the public areas with other users, such information may be viewed by all users and may be publicly distributed outside.</li>
+                <li><strong>With Your consent</strong>: We may disclose Your personal information for any other purpose with Your consent.</li>
+              </ul>
+            <h3>Retention of Your Personal Data</h3>
+              <p>The Company will retain Your Personal Data only for as long as is necessary for the purposes set out in this Privacy Policy. We will retain and use Your Personal Data to the extent necessary to comply with our legal obligations (for example, if we are required to retain your data to comply with applicable laws), resolve disputes, and enforce our legal agreements and policies.</p>
+              <p>The Company will also retain Usage Data for internal analysis purposes. Usage Data is generally retained for a shorter period of time, except when this data is used to strengthen the security or to improve the functionality of Our Service, or We are legally obligated to retain this data for longer time periods.</p>
+            <h3>Transfer of Your Personal Data</h3>
+              <p>Your information, including Personal Data, is processed at the Company's operating offices and in any other places where the parties involved in the processing are located. It means that this information may be transferred to — and maintained on — computers located outside of Your state, province, country or other governmental jurisdiction where the data protection laws may differ than those from Your jurisdiction.</p>
+              <p>Your consent to this Privacy Policy followed by Your submission of such information represents Your agreement to that transfer.</p>
+              <p>The Company will take all steps reasonably necessary to ensure that Your data is treated securely and in accordance with this Privacy Policy and no transfer of Your Personal Data will take place to an organization or a country unless there are adequate controls in place including the security of Your data and other personal information.</p>
+            <h3>Delete Your Personal Data</h3>
+              <p>You have the right to delete or request that We assist in deleting the Personal Data that We have collected about You.</p>
+              <p>Our Service may give You the ability to delete certain information about You from within the Service.</p>
+              <p>You may update, amend, or delete Your information at any time by signing in to Your Account, if you have one, and visiting the account settings section that allows you to manage Your personal information. You may also contact Us to request access to, correct, or delete any personal information that You have provided to Us.</p>
+              <p>Please note, however, that We may need to retain certain information when we have a legal obligation or lawful basis to do so.</p>
+            <h3>Disclosure of Your Personal Data</h3><h4>Law enforcement</h4>
+                <p>Under certain circumstances, the Company may be required to disclose Your Personal Data if required to do so by law or in response to valid requests by public authorities (e.g. a court or a government agency).</p>
+              <h4>Other legal requirements</h4>
+                <p>The Company may disclose Your Personal Data in the good faith belief that such action is necessary to:</p>
+                <ul>
+                  <li>Comply with a legal obligation</li>
+                  <li>Protect and defend the rights or property of the Company</li>
+                  <li>Prevent or investigate possible wrongdoing in connection with the Service</li>
+                  <li>Protect the personal safety of Users of the Service or the public</li>
+                  <li>Protect against legal liability</li>
+                </ul>
+            <h3>Security of Your Personal Data</h3>
+              <p>The security of Your Personal Data is important to Us, but remember that no method of transmission over the Internet, or method of electronic storage is 100% secure. While We strive to use commercially acceptable means to protect Your Personal Data, We cannot guarantee its absolute security.</p>
+          <h2>Children's Privacy</h2>
+            <p>Our Service does not address anyone under the age of 13. We do not knowingly collect personally identifiable information from anyone under the age of 13. If You are a parent or guardian and You are aware that Your child has provided Us with Personal Data, please contact Us. If We become aware that We have collected Personal Data from anyone under the age of 13 without verification of parental consent, We take steps to remove that information from Our servers.</p>
+            <p>If We need to rely on consent as a legal basis for processing Your information and Your country requires consent from a parent, We may require Your parent's consent before We collect and use that information.</p>
+          <h2>Links to Other Websites</h2>
+            <p>Our Service may contain links to other websites that are not operated by Us. If You click on a third party link, You will be directed to that third party's site. We strongly advise You to review the Privacy Policy of every site You visit.</p>
+            <p>We have no control over and assume no responsibility for the content, privacy policies or practices of any third party sites or services.</p>
+          <h2>Changes to this Privacy Policy</h2>
+            <p>We may update Our Privacy Policy from time to time. We will notify You of any changes by posting the new Privacy Policy on this page.</p>
+            <p>We will let You know via email and/or a prominent notice on Our Service, prior to the change becoming effective and update the "Last updated" date at the top of this Privacy Policy.</p>
+            <p>You are advised to review this Privacy Policy periodically for any changes. Changes to this Privacy Policy are effective when they are posted on this page.</p>
+          <h2>Contact Us</h2>
+            <p>If you have any questions about this Privacy Policy, You can contact us:</p>
+            <ul>
+              <li>By email: wiglettbot@gmail.com</li>
+            </ul>
+          </div>
+        </div>
+      <div class="content" role="main" hidden>
+        <h1>
+          Terms of Service
+        </h1>
+        <div class="bubble">
+          This Terms of Service Agreement (the "Agreement") is entered into between camelConvention ("Bot Owner") and the user ("User") of the Wiglett Discord bot (the "Bot").<br>
+          <br>
+          By using the Bot, the User agrees to be bound by the terms of this Agreement. If the User does not agree to the terms of this Agreement, they should immediately discontinue use of the Bot.<br>
+          <br>
+          1. Use of the Bot: The Bot Owner grants the User a non-exclusive, non-transferable, limited license to use the Bot for personal or non-commercial purposes.<br>
+          2. Prohibited Use: The User may not use the Bot in any way that violates applicable laws, rules, or regulations or infringes upon the rights of any third party. The User may not use the Bot for any commercial purposes without the express written consent of the Bot Owner.<br>
+          3. Limitation of Liability: The Bot Owner shall not be liable for any damages arising out of the use or inability to use the Bot, including but not limited to, damages for loss of profits, loss of data, or other intangible losses.<br>
+          4. Modifications to the Bot: The Bot Owner may modify or discontinue the Bot at any time without notice. The User agrees that the Bot Owner shall not be liable to the User or any third party for any modification, suspension, or discontinuance of the Bot.<br>
+          5. Intellectual Property: The Bot and all intellectual property rights therein are and shall remain the property of the Bot Owner. The User agrees not to copy, modify, or distribute the Bot or any portion thereof without the express written consent of the Bot Owner.<br>
+          6. Indemnification: The User agrees to indemnify and hold harmless the Bot Owner, its affiliates, and their respective directors, officers, employees, and agents from any and all claims, damages, liabilities, costs, and expenses, including reasonable attorneys' fees, arising out of the User's use of the Bot.<br>
+          7. Termination: This Agreement may be terminated by either party at any time for any reason. Upon termination, the User must immediately cease all use of the Bot.<br>
+          8. Governing Law: This Agreement shall be governed by and construed in accordance with the laws of the United Kingdom.<br>
+          9. Entire Agreement: This Agreement constitutes the entire agreement between the parties and supersedes all prior or contemporaneous agreements or representations, whether written or oral, relating to the Bot.<br>
+          <br>
+          By using the Bot, the User acknowledges that they have read this Agreement, understand it, and agree to be bound by its terms and conditions.
+        </div>
+      </div>
+    </div>
+  </body>
+</html>

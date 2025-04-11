@@ -1,0 +1,107 @@
+
+:root {
+  --color-bg: #03045e;
+  --color-text-main: black;
+  --color-text-header: ivory;
+  --color-primary: #90e0ef;
+  --wrapper-height: 87vh;
+  --font-family: "Oxygen";
+}
+
+* {
+  box-sizing: border-box;
+}
+[hidden] {
+  display: none !important;
+}
+
+@font-face {
+  font-family: Oxygen;
+  src: url("/OxygenMono-Regular.woff")
+}
+
+
+body {
+  font-family: var(--font-family);
+  background-color: var(--color-bg);
+  color: skyblue;
+}
+
+.wrapper {
+  min-height: var(--wrapper-height);
+  display: grid;
+  place-items: center;
+  margin: 0 1rem;
+}
+.content {
+  display: flex;
+  flex-direction: column;
+  align-items: left;
+  justify-content: center;
+}
+.bubble {
+  background-color: var(--color-primary);
+  color: var(--color-text-main);
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+}
+.invite {
+  text-align: center;
+  background-color: #0077b6;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-image: url("/wiglettbanner.jpg");
+  background-size: cover;
+  background-position: top;
+  height: 30vw;
+  font-size: 5vw;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+  user-select: none;
+}
+.carousel {
+  display: flex;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  scroll-behavior: smooth;
+  width: max(40vw, 60vh);
+  -webkit-overflow-scrolling: touch;
+}
+.carousel::-webkit-scrollbar {
+  width: 10px;
+  height: 10px;
+}
+.carousel::-webkit-scrollbar-thumb {
+  background: ivory;
+  border-radius: 10px;
+}
+.carousel::-webkit-scrollbar-track {
+  background: transparent;
+}
+.item {
+  background-color: #0077b6;
+  background-size: contain;
+  background-repeat: no-repeat;
+  background-position: center;
+  scroll-snap-align: start;
+  flex-shrink: 0;
+  height: max(40vw, 60vh);
+  width: max(40vw, 60vh);
+  margin-left: 3vw;
+  margin-right: 3vw;
+  border-radius: 8px;
+  padding: 0.5rem 1rem;
+}
+
+h1, h2 {
+  color: var(--color-text-header);
+}
+
+a {
+  color: var(--color-text-header);
+}
