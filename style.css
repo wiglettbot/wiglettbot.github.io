@@ -1,9 +1,9 @@
 
 :root {
-  --color-bg: #03045e;
+  --color-bg: #303344;
   --color-text-main: black;
   --color-text-header: ivory;
-  --color-primary: #90e0ef;
+  --color-primary: #a5a6d9;
   --wrapper-height: 87vh;
   --font-family: "Oxygen";
 }
@@ -24,7 +24,7 @@
 body {
   font-family: var(--font-family);
   background-color: var(--color-bg);
-  color: skyblue;
+  color: var(--color-primary);
 }
 
 .wrapper {
@@ -47,7 +47,7 @@ body {
 }
 .invite {
   text-align: center;
-  background-color: #0077b6;
+  background-color: #4b4c9b;
   border-radius: 8px;
   padding: 0.5rem 1rem;
 }
@@ -84,7 +84,7 @@ body {
   background: transparent;
 }
 .item {
-  background-color: #0077b6;
+  background-color: #4b4c9b;
   background-size: contain;
   background-repeat: no-repeat;
   background-position: center;
