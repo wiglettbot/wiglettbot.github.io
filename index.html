@@ -252,7 +252,7 @@
         <div class="bubble">
           Note that for /submit to work properly, the mons on WiglettMatches should use the Showdown name scheme (e.g. Venusaur-Mega). If you need to convert the Smogon template name scheme
           (e.g. Mega Venusaur) to this, you can use the following formula:<br><b>
-          =MAP(REFERENCE TO YOUR MONS; LAMBDA(a; IFS(REGEXMATCH(a; "^Mega .* .$"); INDEX(SPLIT(a; " "); 0; 2)&"-Mega-"&RIGHT(a; 1); REGEXMATCH(a; "Paldean Tauros"); "Tauros-Paldea-"&SUBSTITUTE(a; "Paldean Tauros "; ""); REGEXMATCH(a; "^[^I].*(n|a) "); LET(b; REGEXEXTRACT(a; "^.* "); TRIM(SUBSTITUTE(a; b; "")&"-"&SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(b; "Hisuian"; "Hisui"); "ian"; ""); "an"; "a"))); TRUE; a)))
+          =MAP(REFERENCE TO YOUR MONS; LAMBDA(a; IFS(REGEXMATCH(a; "^Mega .* .$"); INDEX(SPLIT(a; " "); 0; 2)&"-Mega-"&RIGHT(a; 1); REGEXMATCH(a; "Paldean Tauros"); "Tauros-Paldea-"&SUBSTITUTE(a; "Paldean Tauros "; ""); REGEXMATCH(a; "^[^I].*(n|a) "); LET(b; REGEXEXTRACT(a; "^.*? "); TRIM(SUBSTITUTE(a; b; "")&"-"&SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(b; "Hisuian"; "Hisui"); "ian"; ""); "an"; "a"))); TRUE; a)))
         </b></div><br>
         <h2 id="rules">
           Setting Rules
