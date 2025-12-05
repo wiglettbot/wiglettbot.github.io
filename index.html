@@ -171,7 +171,7 @@
           putting team names on the Rosters tab (they will fill in everywhere else), and putting the point values on the WiglettDex tab.
         </div><br>
         <div class="bubble">
-          Other recommended tasks at this point are adding the rules to the Rules tab, adding coach names, time zones and logos to Rosters, setting the number
+          Other recommended tasks at this point are adding the rules to the Rules tab, adding coach/team names and logos to Rosters, setting the number
           of weeks for the Schedule tab (you can randomize it after the draft), and changing the color of the doc. As you can see, the doc does most
           of the work for you.
         </div><br>
@@ -260,10 +260,8 @@
           </div>
         </div><br>
         <div class="bubble">
-          Note that for /submit to work properly, the mons on WiglettMatches should use the Showdown name scheme (e.g. Venusaur-Mega). If you need to convert the Smogon template name scheme
-          (e.g. Mega Venusaur) to this, you can use the following formula:<br><b>
-          =MAP(REFERENCE TO YOUR MONS; LAMBDA(a; IFS(REGEXMATCH(a; "^Mega .* .$"); INDEX(SPLIT(a; " "); 0; 2)&"-Mega-"&RIGHT(a; 1); REGEXMATCH(a; "Paldean Tauros"); "Tauros-Paldea-"&SUBSTITUTE(SUBSTITUTE(a; "Paldean Tauros "; ""); "Paldean Tauros"; "Combat"); REGEXMATCH(a; "^[^I].*(n|a) "); LET(b; REGEXEXTRACT(a; "^.*? "); TRIM(SUBSTITUTE(a; b; "")&"-"&SUBSTITUTE(SUBSTITUTE(SUBSTITUTE(b; "Hisuian"; "Hisui"); "ian"; ""); "an"; "a"))); TRUE; a)))
-        </b></div><br>
+          WiglettDex should match the name scheme of the doc that you're using. Chances are the doc template already has a Dex tab, so just reference the list of mons and point values on WiglettDex and you'll be set.
+        </div><br>
         <h2 id="rules">
           Setting Rules
         </h2>
@@ -273,8 +271,8 @@
         </div><br>
         <div class="bubble">
           When you use <b>/rule</b>, there will be a dropdown menu with different options. You can view the current rules by selecting View Rules as shown below. By default, your draft has
-          species clause on, and count passives + cut timer on skip off. You can toggle either of these by using the command with the corresponding option. Count passives
-          determines whether passive kills are separated from direct kills when submitting matches, and cut timer on skip will halve a coach's timer if they are skipped by timer during the draft.
+          species clause on, and count passives off. You can toggle either of these by using the command with the corresponding option. Count passives
+          determines whether passive kills are separated from direct kills when submitting matches. (You can use /rule help to see what all of the rules do, but I will explain them here anyway.)
         </div><br>
         <div class="carousel">
           <div class="item" style="background-image: url('/img/rulesdropdown.jpg')">
@@ -285,14 +283,8 @@
           </div>
         </div><br>
         <div class="bubble">
-          The other options use the data parameter of the command. For example, to delete the 4th rule (you can see the numbers in view rules), select delete rule and enter 4 into the data parameter. The min length
-          rule allows for variable draft lengths - normally Wiglett will not allow coaches to run out of points early, so this rule lets you tell Wiglett the minimum number of mons that coaches
-          need to draft. The megas rule restricts the number of mega evolutions coaches can draft to the number specified (specifically, it checks whether the mon's name includes "-Mega" or "Mega ").
-        </div><br>
-        <div class="bubble">
-          The cap rule is the most versatile one. The data you enter must be formatted as: points min max, where points is a comma separated list of point values, min is the minimum number of mons
-          that coaches must draft from these tiers, and max is the maximum that coaches can draft. For example, if I enter 18,19 1 2, coaches <i>must</i> draft at least 1 mon that costs 18 or 19, and
-          <i>cannot</i> draft more than 2 mons from these tiers.
+          The other options all have a unique menu that allows you to create the rule. For example, tier cap asks for a list of tiers, and a minimum + maximum number of mons that coaches must draft from those tiers.
+          This is helpful if your draft is tier based (e.g. 2 A tiers per draft, so on) or a restricted format (e.g. only one restricted per draft).
         </div><br>
         <div class="carousel">
           <div class="item" style="background-image: url('/img/caprule.jpg')">
@@ -301,9 +293,14 @@
           </div>
         </div><br>
         <div class="bubble">
-          If you have a tier-based league, this is the main way for you to enforce limits, as any non-numeric point values in WiglettDex will not subtract any points from coaches' totals. For example,
-          if I assign mons to S, A, B, C, and D tiers, and I want coaches to draft 2 mons from each tier, then I would do one rule with S 2 2, one with A 2 2, so on and so forth. If you have a hybrid
-          points and tiers league, you can give mons their numeric values in WiglettDex, and use cap rules to enforce the additional restrictions (e.g. one of each tier required).
+          Min draft length allows for variable draft lengths - normally Wiglett will not allow coaches to run out of points early, so this rule lets you tell Wiglett the minimum number of mons that coaches
+          need to draft. For example, if coaches can draft 8 to 10 mons, you would use a draft length of 10 and a min draft length of 8. Max megas restricts the number of mega evolutions coaches can draft to
+          the number specified (specifically, it checks whether the mon's name includes "-Mega" or "Mega ").
+        </div><br>
+        <div class="bubble">
+          Cut timer on skip will halve a coach's timer if they are skipped via timer (this will not happen when /draftmod skip is used). Lock draft channel prevents coaches from drafting in a channel besides
+          the one where the draft was started. Finally, copy to div simply allows you to copy all rules from one div to another. This is useful in case you forgot to set the rules before creating multiple divisions,
+          so you wouldn't have to set them manually for each div.
         </div><br>
         <h2 id="divs">
           Creating Divisions
@@ -371,7 +368,8 @@
         </div><br>
         <div class="bubble">
           To draft a mon, coaches can use <b>/draft</b>. This will draft the mon, updating the doc and pinging the next person. If the pick is illegal for whatever reason, Wiglett will let them know why they cannot pick that mon.
-          If they misspell the mon, there is a built-in autocorrect (because draft players cannot spell). However, if they <i>really</i> butcher the name, it will inform them that the pick is invalid.
+          If they misspell the mon, there is a built-in autocorrect (because draft players cannot spell). However, if they <i>really</i> butcher the name, it will inform them that the pick is invalid. Players can also voluntarily
+          skip by using /draft skip (e.g. their draft is finished but they still have points and thus were not skipped automatically).
         </div><br>
         <div class="carousel">
           <div class="item" style="background-image: url('/img/draft.jpg')">
@@ -467,7 +465,7 @@
           anything and the match will be submitted immediately). 
         </div><br>
         <div class="bubble">
-          Now it's time to enter your match data. Each mon will have buttons to increase or decrease kills and deaths (and passive kills if count passives is turned on). When the stats are correct, click Next to proceed
+          Now it's time to enter your match data. Each mon will have buttons to set kills and deaths (and passive kills if count passives is turned on). When the stats are correct, click Next to proceed
           to the next mon. On the final mon, clicking Next will submit the match.
         </div><br>
         <div class="carousel">
@@ -647,3 +645,4 @@
     </div>
   </body>
 </html>
+
